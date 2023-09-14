@@ -153,376 +153,825 @@
   }
 }
 /*-- -------------------------- -->
-<---         Navigation         -->
+<---      Dark Mode Toggle      -->
 <--- -------------------------- -*/
-/* Mobile - Top Drop Down */
-@media only screen and (max-width: 1023px) {
-  #navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-    height: auto;
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #dark-mode-toggle .cs-sun {
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
-  #navigation .background-color-div {
+  body.dark-mode #dark-mode-toggle .cs-moon {
+    transform: translate(-50%, -150%);
+    opacity: 0;
+  }
+  #dark-mode-toggle {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    display: block;
+    order: 2;
+    position: relative;
+    z-index: 1000;
+  }
+  #dark-mode-toggle img,
+  #dark-mode-toggle svg {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+  }
+  #dark-mode-toggle .cs-moon {
+    z-index: 2;
+    transition: transform .3s, opacity .3s;
+    fill: #1a1a1a;
+  }
+  #dark-mode-toggle .cs-sun {
+    z-index: 1;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #dark-mode-toggle {
+    margin-left: 1rem;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    order: 3;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #dark-mode-toggle {
+    position: relative;
+    transform: none;
+    bottom: auto;
+    right: auto;
+    margin: 0;
+  }
+  #dark-mode-toggle:hover {
+    cursor: pointer;
+  }
+}
+
+/*-- -------------------------- -->
+<---     Mobile Navigation      -->
+<--- -------------------------- -*/
+
+:root {
+  /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+  --primary: #EDA708;
+  --primaryLight: #EDA708;
+  --secondary: #FDD65B;
+  --secondaryLight: #FFBA43;
+  --headerColor: #1a1a1a;
+  --bodyTextColor: #4E4B66;
+  --bodyTextColorWhite: #FAFBFC;
+  /* 13px - 16px */
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  /* 31px - 49px */
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --bodyFontSize: 1rem;
+  /* 60px - 100px top and bottom */
+  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+/* Mobile - 1023px */
+@media only screen and (max-width: 63.9375rem) {
+  body.cs-open {
+    overflow: hidden;
+  }
+  body.scroll #cs-navigation .cs-top-container {
+    gap: 0;
+  }
+  body.scroll #cs-navigation .cs-top-social {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  #cs-navigation {
+    /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+    font-family: 'Roboto', 'Arial', sans-serif;
     width: 100%;
-    height: 100%;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    background-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: fixed;
+    z-index: 10000;
   }
-  #navigation .container {
-    padding: 0.8125rem 0;
-    width: 96%;
+  #cs-navigation:before {
+    content: '';
+    width: 100%;
+    height: 0vh;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    display: block;
+    top: 100%;
+    right: 0;
+    z-index: -1100;
+    opacity: 0;
+    transition: height .5s, opacity .5s;
   }
-  #navigation .logo {
-    display: inline-block;
-    height: 1.875rem;
-    width: auto;
+  #cs-navigation.cs-active:before {
+    height: 150vh;
+    opacity: 1;
   }
-  #navigation .logo img {
-    width: auto;
-    height: 100%;
+  #cs-navigation.cs-active .cs-ul-wrapper {
+    opacity: 1;
+    transform: scaleY(1);
+    transition-delay: .15s;
   }
-  #navigation .logo .light {
+  #cs-navigation.cs-active .cs-li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  #cs-navigation .cs-top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cs-navigation .cs-top-container {
+    width: 100%;
+    /* 16px - 20px */
+    padding: clamp(1rem, 2.5vw, 1.25rem) 1rem;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  #cs-navigation .cs-contact-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    /* sends it to the right in the 2nd position */
+    order: 2;
+  }
+  #cs-navigation .cs-contact-link {
     display: none;
   }
-  #navigation .logo .dark {
-    display: block;
+  #cs-navigation .cs-container {
+    width: 100%;
+    /* 16px - 20px */
+    padding: clamp(1rem, 2.5vw, 1.25rem) 1rem;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
   }
-  #navigation .hamburger-menu {
-    position: absolute;
-    right: 0rem;
-    border: none;
-    height: 3rem;
-    width: 3rem;
-    z-index: 100;
-    display: block;
-    background: transparent;
+  #cs-navigation .cs-logo {
+    width: auto;
+    /* 24px - 32px */
+    height: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 auto 0 0;
     padding: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: top .3s;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    z-index: 10;
   }
-  #navigation .hamburger-menu span {
+  #cs-navigation .cs-logo img {
+    width: auto;
+    height: 100%;
+    /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+    object-fit: contain;
+  }
+  #cs-navigation .cs-nav {
+    order: 2;
+  }
+  #cs-navigation .cs-toggle {
+    /* 48px - 56px */
+    width: clamp(3rem, 7.2vw, 3.5rem);
+    height: clamp(3rem, 7.2vw, 3.5rem);
+    margin: 0 0 0 auto;
+    background-color: #484848;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .6s;
+  }
+  #cs-navigation .cs-toggle.cs-active {
+    transform: rotate(180deg);
+  }
+  #cs-navigation .cs-active .cs-line1 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
+  #cs-navigation .cs-active .cs-line2 {
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) translateY(0) rotate(-225deg);
+  }
+  #cs-navigation .cs-active .cs-line3 {
+    bottom: 100%;
+    opacity: 0;
+  }
+  #cs-navigation .cs-box {
+    /* 24px - 28px */
+    width: clamp(1.5rem, 2vw, 1.75rem);
+    height: 1rem;
+    position: relative;
+  }
+  #cs-navigation .cs-line {
+    width: 100%;
     height: 2px;
-    width: 1.875rem;
-    background-color: #000;
-    display: block;
+    border-radius: 2px;
+    background-color: #FAFBFC;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    transition: background-color 0.3s;
   }
-  #navigation .hamburger-menu span:before {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 2px;
-    width: 80%;
-    background: #000;
-    opacity: 1;
-    top: -6px;
-    left: 0;
-    transition: width .3s, left .3s, top .3s, transform .5s;
+  #cs-navigation .cs-line1 {
+    top: 0;
+    transform-origin: center;
+    transition: transform .5s, top .3S, left .3S;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
   }
-  #navigation .hamburger-menu span:after {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 2px;
-    width: 80%;
-    background: #000;
-    opacity: 1;
-    top: 6px;
-    left: 0;
-    transition: width .3s, left .3s, top .3s, transform .3s;
-  }
-  #navigation .hamburger-menu.clicked span {
-    background-color: transparent;
-  }
-  #navigation .hamburger-menu.clicked span:before {
-    width: 100%;
-    transform: translate(-50%, -50%) rotate(225deg);
-    left: 50%;
+  #cs-navigation .cs-line2 {
     top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: top .3s, left .3s, transform .5s;
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
   }
-  #navigation .hamburger-menu.clicked span:after {
+  #cs-navigation .cs-line3 {
+    bottom: 0;
+    transition: bottom .3s, opacity .3s;
+  }
+  #cs-navigation .cs-ul-wrapper {
     width: 100%;
-    transform: translate(-50%, -50%) rotate(-225deg);
-    left: 50%;
-    top: 50%;
-  }
-  #navigation #navbar-menu {
-    position: fixed;
-    right: 0;
-    padding: 0;
-    width: 100%;
-    border-radius: 0 0 0.375em 0.375em;
-    z-index: -1;
-    overflow: hidden;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color: #fff;
-    top: 3.7rem;
-    padding-top: 0;
-    height: 0;
-    transition: height 0.3s, padding-top 0.3s, top 0.3s;
-  }
-  #navigation #navbar-menu ul {
-    padding: 0;
-    perspective: 700px;
-  }
-  #navigation #navbar-menu ul li {
-    list-style: none;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    transform-style: preserve-3d;
+    height: auto;
+    padding-bottom: 3rem;
     opacity: 0;
-    transform: translateY(-0.4375rem) rotateX(90deg);
-    transition: opacity .5s, transform .5s;
+    background-color: #fff;
+    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .4s, opacity .3s;
   }
-  #navigation #navbar-menu ul li:nth-of-type(1) {
-    transition-delay: .01s;
+  #cs-navigation .cs-ul {
+    margin: 0;
+    padding: 3rem 0 0 0;
+    width: 100%;
+    height: auto;
+    max-height: 65vh;
+    overflow: scroll;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
   }
-  #navigation #navbar-menu ul li:nth-of-type(2) {
-    transition-delay: .02s;
+  #cs-navigation .cs-li {
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    margin-right: 0;
+    /* transition from these values */
+    transform: translateY(-4.375rem);
+    opacity: 0;
+    transition: transform .6s, opacity .9s;
   }
-  #navigation #navbar-menu ul li:nth-of-type(3) {
-    transition-delay: .03s;
-  }
-  #navigation #navbar-menu ul li:nth-of-type(4) {
-    transition-delay: .04s;
-  }
-  #navigation #navbar-menu ul li:nth-of-type(5) {
+  #cs-navigation .cs-li:nth-of-type(1) {
     transition-delay: .05s;
   }
-  #navigation #navbar-menu ul li:nth-of-type(6) {
-    transition-delay: .06s;
+  #cs-navigation .cs-li:nth-of-type(2) {
+    transition-delay: .1s;
   }
-  #navigation #navbar-menu ul li:nth-of-type(7) {
-    transition-delay: .07s;
+  #cs-navigation .cs-li:nth-of-type(3) {
+    transition-delay: .15s;
   }
-  #navigation #navbar-menu ul li a {
+  #cs-navigation .cs-li:nth-of-type(4) {
+    transition-delay: .2s;
+  }
+  #cs-navigation .cs-li:nth-of-type(5) {
+    transition-delay: .25s;
+  }
+  #cs-navigation .cs-li:nth-of-type(6) {
+    transition-delay: .3s;
+  }
+  #cs-navigation .cs-li:nth-of-type(7) {
+    transition-delay: .35s;
+  }
+  #cs-navigation .cs-li:nth-of-type(8) {
+    transition-delay: .4s;
+  }
+  #cs-navigation .cs-li:nth-of-type(9) {
+    transition-delay: .45s;
+  }
+  #cs-navigation .cs-li:nth-of-type(10) {
+    transition-delay: .5s;
+  }
+  #cs-navigation .cs-li:nth-of-type(11) {
+    transition-delay: .55s;
+  }
+  #cs-navigation .cs-li:nth-of-type(12) {
+    transition-delay: .6s;
+  }
+  #cs-navigation .cs-li:nth-of-type(13) {
+    transition-delay: .65s;
+  }
+  #cs-navigation .cs-li-link {
+    /* 16px - 24px */
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.2em;
     text-decoration: none;
-    text-transform: uppercase;
-    color: #000;
-    font-size: 1.1875rem;
-    text-align: center;
+    margin: 0;
+    color: var(--headerColor);
     display: inline-block;
     position: relative;
-    font-weight: bold;
   }
-  #navigation #navbar-menu ul li a.active:before {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 0.5rem;
-    background: var(--primary);
-    opacity: 1;
-    bottom: 5rem;
-    border-radius: 0.25rem;
-    left: -0.375rem;
-    right: -0.375rem;
-    z-index: -1;
+  #cs-navigation .cs-li-link.cs-active {
+    color: var(--primary);
   }
-  #navigation #navbar-menu.open {
-    height: 22.25rem;
-    padding-top: 1.25rem;
-    z-index: -100;
+  #cs-navigation .cs-li-link:hover {
+    color: var(--primary);
   }
-  #navigation #navbar-menu.open ul li {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-  }
-}
-/* Desktop */
-@media only screen and (min-width: 64em) {
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 0.375em rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-  }
-  ::-webkit-scrollbar-track-piece {
-    background-color: #f0f0f0;
-  }
-  ::-webkit-scrollbar {
-    width: 0.75em;
-    background-color: #F5F5F5;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 0.625em;
-    background: var(--primary);
-  }
-  body.scroll #navigation .background-color-div {
-    height: 100%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-  body.scroll #navigation .logo .light {
-    display: none;
-  }
-  body.scroll #navigation .logo .dark {
-    display: block;
-  }
-  body.scroll #navigation #navbar-menu ul li a {
-    color: #1a1a1a;
-  }
-  body.scroll #dark-mode-toggle svg path {
-    fill: #000;
-  }
-  body.dark-mode #navigation .background-color-div {
-    height: 100%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-  #navigation {
-    width: 100%;
-    height: 6.25rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 200000;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-  #navigation .background-color-div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    height: 0;
-    transition: height .3s;
-  }
-  #navigation .container {
-    max-width: 75rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  #navigation .logo {
-    margin-right: auto;
-    height: 3.75rem;
-    width: auto;
-  }
-  #navigation .logo img {
-    width: auto;
-    height: 100%;
-  }
-  #navigation #navbar-menu ul {
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  #navigation #navbar-menu ul li {
-    list-style: none;
-    margin-left: 1.875rem;
-    padding-top: 0.1875rem;
-  }
-  #navigation #navbar-menu ul li a {
+  #cs-navigation .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
     text-decoration: none;
-    font-weight: bold;
-    /* 14px - 18px */
-    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #1a1a1a;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
     position: relative;
     z-index: 1;
-    color: #fff;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
     transition: color .3s;
   }
-  #navigation #navbar-menu ul li a:before {
+  #cs-navigation .cs-button-solid:before {
     content: '';
     position: absolute;
-    display: block;
-    height: 0.375rem;
-    border-radius: 0.1875rem;
-    background: var(--primary);
-    opacity: 1;
-    bottom: 0.125rem;
-    z-index: -1;
-    left: 0;
+    height: 100%;
     width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
     transition: width .3s;
   }
-  #navigation #navbar-menu ul li a:hover:before {
+  #cs-navigation .cs-button-solid:hover {
+    color: #fff;
+  }
+  #cs-navigation .cs-button-solid:hover:before {
     width: 100%;
   }
-  #navigation #navbar-menu ul li a.active:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 0.375rem;
-    background: var(--primary);
-    opacity: 1;
-    bottom: 0.125rem;
-    border-radius: 0.1875rem;
-    left: 0rem;
-    right: -0.375rem;
-    z-index: -1;
-    transition: bottom .3s;
-  }
-  #navigation .hamburger-menu {
+  #cs-navigation .cs-button-solid {
+    margin: 0;
     display: none;
   }
-}
-/* Dark Mode Mobile */
-@media only screen and (max-width: 1023px) {
-  body.dark-mode #navigation .background-color-div {
-    background-color: var(--dark);
+  #cs-navigation .cs-call {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
   }
-  body.dark-mode #navigation .hamburger-menu.clicked span {
-    background-color: var(--dark);
+  #cs-navigation .cs-call:before {
+    /* light green circle that animates on hover */
+    content: '';
+    width: 3rem;
+    height: 3rem;
+    background: #EFF1F0;
+    border-radius: 1.5rem;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: width 0.3s, height 0.3s, border-radius 0.3s;
   }
-  body.dark-mode #navigation .hamburger-menu span {
-    background-color: #fff;
+  #cs-navigation .cs-call .cs-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* prevents flexbox from squishing it */
+    flex: none;
+    transition: transform .3s;
   }
-  body.dark-mode #navigation .hamburger-menu span:before,
-  body.dark-mode #navigation .hamburger-menu span:after {
-    background-color: #fff;
+  #cs-navigation .cs-call .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+    transition: transform .3s;
   }
-  body.dark-mode #navigation .logo .light {
+  #cs-navigation .cs-call .cs-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #cs-navigation .cs-call .cs-header {
+    font-size: 0.875rem;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
     display: block;
   }
-  body.dark-mode #navigation .logo .dark {
-    display: none !important;
-  }
-  body.dark-mode #navigation #navbar-menu {
-    background-color: var(--medium);
-  }
-  body.dark-mode #navigation #navbar-menu ul li a {
-    color: #fff;
-  }
-  body.dark-mode #navigation #navbar-menu ul li a:before {
-    background: var(--accent);
-  }
-  body.dark-mode #navigation #navbar-menu ul li a.active {
-    color: var(--primary);
-  }
-}
-/* Dark Mode Desktop */
-@media only screen and (min-width: 1024px) {
-  body.dark-mode #navigation .background-color-div {
-    background-color: var(--dark);
-  }
-  body.dark-mode #navigation .logo .light {
+  #cs-navigation .cs-call .cs-link-content {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
     display: block;
   }
-  body.dark-mode #navigation .logo .dark {
-    display: none !important;
-  }
-  body.dark-mode #navigation #navbar-menu ul li a {
-    color: #fff;
-  }
-  body.dark-mode #navigation #navbar-menu ul li a:before {
-    background: var(--accent);
-  }
-  body.dark-mode #navigation #navbar-menu ul li a.active {
-    color: var(--primary);
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cs-navigation .cs-button-solid {
+    display: block;
   }
 }
+/* Dark Mode */
+@media only screen and (max-width: 63.9375rem) {
+  body.dark-mode #cs-navigation {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-logo {
+    /* makes it white */
+    filter: grayscale(1) brightness(1000%);
+  }
+  body.dark-mode #cs-navigation .cs-ul-wrapper {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-li-link {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #cs-navigation .cs-container {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/*-- -------------------------- -->
+<---     Desktop Navigation     -->
+<--- -------------------------- -*/
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cs-navigation {
+    /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+    font-family: 'Roboto', 'Arial', sans-serif;
+    width: 100%;
+    padding: 0;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: fixed;
+    z-index: 10000;
+  }
+  #cs-navigation .cs-top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cs-navigation .cs-top-container {
+    width: 100%;
+    max-width: 80rem;
+    padding: 1rem;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  #cs-navigation .cs-contact-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  #cs-navigation .cs-contact-link {
+    text-decoration: none;
+    padding-right: 1.875rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    perspective: 200px;
+    transform-style: preserve-3d;
+  }
+  #cs-navigation .cs-contact-link:nth-of-type(2) {
+    display: none;
+  }
+  #cs-navigation .cs-contact-link:hover .cs-wrapper {
+    transform: rotateY(180deg);
+  }
+  #cs-navigation .cs-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* prevents flexbox from squishing it */
+    flex: none;
+    position: relative;
+    z-index: 1;
+    transition: transform .6s;
+  }
+  #cs-navigation .cs-wrapper:before {
+    /* backgorund color in pseudo so we can use the primary color variable and use opacity */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    opacity: .1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+  }
+  #cs-navigation .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+    transition: transform .3s;
+  }
+  #cs-navigation .cs-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  #cs-navigation .cs-header {
+    font-size: 1rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--headerColor);
+    display: block;
+  }
+  #cs-navigation .cs-link-content {
+    font-size: 0.875rem;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: block;
+  }
+  #cs-navigation .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #1a1a1a;
+    min-width: 9.375rem;
+    padding: 0 3rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    transition: color .3s;
+  }
+  #cs-navigation .cs-button-solid:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width .3s;
+  }
+  #cs-navigation .cs-button-solid:hover {
+    color: #fff;
+  }
+  #cs-navigation .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #cs-navigation .cs-bottom-bar {
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cs-navigation .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    padding: 0 1rem;
+    /* prevents padding from affectin gheight */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+  }
+  #cs-navigation .cs-toggle {
+    display: none;
+  }
+  #cs-navigation .cs-logo {
+    width: 18.4%;
+    max-width: 12.3125rem;
+    height: 3.75rem;
+    /* margin-right auto pushes everything away from it to the right */
+    margin: 0 auto 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  #cs-navigation .cs-logo img {
+    width: 100%;
+    height: 100%;
+    /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+    object-fit: contain;
+  }
+  #cs-navigation .cs-ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.25rem;
+  }
+  #cs-navigation .cs-li {
+    list-style: none;
+    padding: 2.25rem 0;
+    /* prevent flexbox from squishing it */
+    flex: none;
+  }
+  #cs-navigation .cs-li-link {
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    text-decoration: none;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+    position: relative;
+    transition: color .3s;
+  }
+  #cs-navigation .cs-li-link:hover {
+    color: var(--primary);
+  }
+  #cs-navigation .cs-li-link.cs-active {
+    font-weight: 700;
+    color: var(--primary);
+  }
+  #cs-navigation .cs-call {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    perspective: 200px;
+    transform-style: preserve-3d;
+  }
+  #cs-navigation .cs-call:hover:hover .cs-wrapper {
+    transform: rotateY(180deg);
+  }
+  #cs-navigation .cs-call .cs-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* prevents flexbox from squishing it */
+    flex: none;
+    transition: transform .6s;
+  }
+  #cs-navigation .cs-call .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+    transition: transform .3s;
+  }
+  #cs-navigation .cs-call .cs-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #cs-navigation .cs-call .cs-header {
+    font-size: 0.875rem;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+  #cs-navigation .cs-call .cs-link-content {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    display: block;
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 75rem) {
+  #cs-navigation .cs-contact-link:nth-of-type(2) {
+    display: flex;
+  }
+}
+/* Larger Desktop - 1200px */
+@media only screen and (min-width: 100rem) {
+  #cs-navigation .cs-donate {
+    display: flex;
+    margin-left: auto;
+  }
+  #cs-navigation .cs-nav-button {
+    margin: 0;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 64rem) {
+  body.dark-mode #cs-navigation {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-header,
+  body.dark-mode #cs-navigation .cs-link-content {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #cs-navigation .cs-wrapper:before {
+    background-color: #fff;
+  }
+  body.dark-mode #cs-navigation .cs-call .cs-header {
+    opacity: .8;
+  }
+  body.dark-mode #cs-navigation .cs-call .cs-link-content {
+    opacity: 1;
+  }
+  body.dark-mode #cs-navigation .cs-link-content {
+    opacity: .8;
+  }
+  body.dark-mode #cs-navigation .cs-bottom-bar {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  body.dark-mode #cs-navigation .cs-logo,
+  body.dark-mode #cs-navigation .cs-link-icon {
+    /* turns it white */
+    filter: grayscale(1) brightness(1000%);
+  }
+}
+                                
 /*-- -------------------------- -->
 <---   Interior Page Header     -->
 <--- -------------------------- -*/
