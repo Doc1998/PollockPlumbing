@@ -68,84 +68,105 @@ eleventyNavigation:
 
 
 <!-- ============================================ -->
-<!--                 Side By Side                 -->
+<!--                Side By Side                  -->
 <!-- ============================================ -->
 
-<section id="sbs">
+<section id="RPsbs-1163">
   <div class="cs-container">
-    <!-- Left Image Section -->
-    <div class="cs-left">
-      {% image './src/images/cabinets2.jpg', 'house', 'cs-picture cs-picture1', 'lazy'%}
-      {% image './src/images/construction.jpg', 'house', 'cs-picture cs-picture2', 'lazy'%}
-    </div>
-    <!-- Right Content Section-->
-    <div class="cs-right">
-      <span class="cs-topper">About Us</span>
-      <h2 class="cs-title">About Company Title</h2>
-      <p class="cs-text">
-        In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis
-        libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei
-        aptent taciti sociosqu ad litora torquent per.
-      </p>
-      <p class="cs-text">
-        In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis
-        libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei
-        aptent taciti sociosqu ad litora torquent per.
-      </p>
-      <div class="cs-flex-group">
-        <p class="cs-flex-p">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet
-          imperdiet for mind.
-        </p>
-        <span class="cs-name">Justin Time</span>
-        <span class="cs-job">CEO-Founder</span>
-        <img
-          class="cs-quote-icon"
-          loading="lazy"
-          decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-          alt="gavel"
-          width="136"
-          height="77"
-/>
+      <div class="cs-image-group">
+          <!--Top left image-->
+          <picture class="cs-picture cs-picture1">
+              <!--Mobile Image-->
+              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic25.jpg">
+              <!--Tablet and above Image-->
+              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic25.jpg">
+              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic25.jpg" alt="appliance" width="630" height="390">
+          </picture>
+          <!--Bottom right image-->
+          <picture class="cs-picture cs-picture2">
+              <!--Mobile Image-->
+              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic26.jpg">
+              <!--Tablet and above Image-->
+              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic26.jpg">
+              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic26.jpg" alt="appliance" width="461" height="300">
+          </picture>
+          <!--Splash Graphic-->
+          <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/splash-grey.svg" alt="splash" width="1154" height="505" aria-hidden="true">
+          <!--Tire Mark-->
+          <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-mark.svg" alt="tire mark" width="1085" height="322" aria-hidden="true">
+          <div class="cs-box">
+              <span class="cs-number">2500+</span>
+              <span class="cs-desc">Happy Customers</span>
+          </div>
       </div>
-      <a href="/about" class="button-solid">More About Us</a>
-    </div>
+      <div class="cs-content">
+          <span class="cs-topper">About Us</span>
+          <h2 class="cs-title">Quality With The Best Standards</h2>
+          <p class="cs-text">
+              Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes, and total vehicle overhauls. Busto auctor lectus vitae conubia euismod nec rhoncus parturient convallis parturient accumsan volutpat ligula and intege aenean facilisis.
+          </p>
+          <ul class="cs-ul">
+              <li class="cs-li">We handle all makes and models</li>
+              <li class="cs-li">We are endorsed by the local trading standards office</li>
+              <li class="cs-li">All our technicians are equipped with the latest portable</li>
+              <li class="cs-li">Proven results for setting exceptional standards</li>
+              <li class="cs-li">Same day service for most repairs</li>
+          </ul>
+          <a href="" class="cs-button-solid">Read More</a>
+      </div>
   </div>
 </section>
 
 <!-- ============================================ -->
-<!--            Extra Content To Rank             -->
+<!--            Side By Side Reverse              -->
 <!-- ============================================ -->
 
-<section id="sbs-r">
+<section id="RPsbsr-1163">
   <div class="cs-container">
-    <!-- Left Image Section -->
-    <div class="cs-left">
-      {% image './src/images/construction.jpg', 'house', 'cs-picture cs-picture1', 'lazy'%}
-      {% image './src/images/cabinets2.jpg', 'house', 'cs-picture cs-picture2', 'lazy'%}
-    </div>
-    <!-- Right Content Section-->
-    <div class="cs-right">
-      <span class="cs-topper">SEO Ranking</span>
-      <h2 class="cs-title">Talk about a main service keyword</h2>
-      <p class="cs-text">
-        In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis
-        libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei
-        aptent taciti sociosqu ad litora torquent per.
-      </p>
-      <p class="cs-text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tenetur, iure nihil ipsam qui atque commodi id
-        voluptatem nesciunt, quis animi fuga cum doloribus! Eaque laboriosam, unde consectetur iure asperiores ullam.
-        Consequuntur debitis a voluptatibus vitae optio autem explicabo quia neque est quas, in placeat. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Doloribus modi laudantium voluptatibus rem libero error minus quia
-        eligendi sapiente eos.
-      </p>
-      <a href="" class="button-solid">Learn More About Thing</a>
-    </div>
+      <div class="cs-image-group">
+          <!--Top left image-->
+          <picture class="cs-picture cs-picture1">
+              <!--Mobile Image-->
+              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic25.jpg">
+              <!--Tablet and above Image-->
+              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic25.jpg">
+              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic25.jpg" alt="appliance" width="630" height="390">
+          </picture>
+          <!--Bottom right image-->
+          <picture class="cs-picture cs-picture2">
+              <!--Mobile Image-->
+              <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic26.jpg">
+              <!--Tablet and above Image-->
+              <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic26.jpg">
+              <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/mechanic26.jpg" alt="appliance" width="461" height="300">
+          </picture>
+          <!--Splash Graphic-->
+          <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/splash-reverse.svg" alt="splash" width="1154" height="505" aria-hidden="true">
+          <!--Tire Mark-->
+          <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-reverse.svg" alt="tire mark" width="1085" height="322" aria-hidden="true">
+          <div class="cs-box">
+              <span class="cs-number">30</span>
+              <span class="cs-desc">Years Of Experience</span>
+          </div>
+      </div>
+      <div class="cs-content">
+          <span class="cs-topper">About Us</span>
+          <h2 class="cs-title">Quality With The Best Standards</h2>
+          <p class="cs-text">
+              Our professionals will perform diagnostic tests, fluid flush and fills, engine replacement, oil changes, and total vehicle overhauls. Busto auctor lectus vitae conubia euismod nec rhoncus parturient convallis parturient accumsan volutpat ligula and intege aenean facilisis.
+          </p>
+          <ul class="cs-ul">
+              <li class="cs-li">We handle all makes and models</li>
+              <li class="cs-li">We are endorsed by the local trading standards office</li>
+              <li class="cs-li">All our technicians are equipped with the latest portable</li>
+              <li class="cs-li">Proven results for setting exceptional standards</li>
+              <li class="cs-li">Same day service for most repairs</li>
+          </ul>
+          <a href="" class="cs-button-solid">Read More</a>
+      </div>
   </div>
 </section>
-
+                              
 <!-- ============================================ -->
 <!--                   Gallery                    -->
 <!-- ============================================ -->
