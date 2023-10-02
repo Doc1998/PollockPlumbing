@@ -165,26 +165,7 @@
         display: block;
     }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode #services-218 .cs-title,
-    body.dark-mode #services-218 .cs-text,
-    body.dark-mode #services-218 .cs-h3,
-    body.dark-mode #services-218 .cs-item-text {
-        color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #services-218 .cs-item {
-        background-color: var(--medium);
-        border: none;
-    }
-    body.dark-mode #services-218 .cs-item:before {
-        background: var(--accent);
-    }
-    body.dark-mode #services-218 .cs-icon {
-        /* makes so bright it turns white */
-        filter: brightness(3000%);
-    }
-}
+
 /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
@@ -452,22 +433,7 @@
         order: 2;
     }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode #sbsr-1100 .cs-title,
-    body.dark-mode #sbsr-1100 .cs-text,
-    body.dark-mode #sbsr-1100 .cs-h3,
-    body.dark-mode #sbsr-1100 .cs-li-text {
-        color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #sbsr-1100 .cs-text,
-    body.dark-mode #sbsr-1100 .cs-li-text {
-        opacity: 0.8;
-    }
-    body.dark-mode #sbsr-1100 .cs-stripes {
-        opacity: 0.2;
-    }
-}
+
 
 /*-- -------------------------- -->
 <---          Contact           -->
@@ -734,36 +700,7 @@
         width: auto;
     }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode #contact-1333 .cs-title,
-    body.dark-mode #contact-1333 .cs-item-p,
-    body.dark-mode #contact-1333 .cs-button,
-    body.dark-mode #contact-1333 label {
-        color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #contact-1333 .cs-button:before,
-    body.dark-mode #contact-1333 .cs-button:after {
-        background-color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #contact-1333 .cs-item-p {
-        opacity: 0.8;
-    }
-    body.dark-mode #contact-1333 .cs-form {
-        background-color: var(--medium);
-    }
-    body.dark-mode #contact-1333 .cs-input {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #fff;
-    }
-    body.dark-mode #contact-1333 .cs-input::placeholder {
-        color: #fff;
-        opacity: 0.8;
-    }
-    body.dark-mode #contact-1333 .cs-graphic {
-        opacity: 0.4;
-    }
-}
+
 /*-- -------------------------- -->
 <---          Reviews           -->
 <--- -------------------------- -*/

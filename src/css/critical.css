@@ -244,10 +244,5 @@
     background-attachment: fixed;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #hero .cs-background:before {
-    opacity: .8;
-  }
-}
+
 
