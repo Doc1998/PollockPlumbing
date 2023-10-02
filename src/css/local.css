@@ -74,7 +74,8 @@
     line-height: 1.2em;
     text-align: inherit;
     max-width: 51.8125rem;
-    margin: 0 auto 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: #fff;
     position: relative;
   }
