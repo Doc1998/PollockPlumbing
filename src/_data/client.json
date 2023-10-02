@@ -7,8 +7,6 @@
     "lineOne": "First Address Line",
     "lineTwo": "Second Address Line, If Needed",
     "city": "Dublin",
-    "county": "Dublin",
-    "postcode": "80206",
     "mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
   },
   "domain": "www.pollockplumbing.ie"
