@@ -222,19 +222,7 @@
     display: none;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #hero-1060 .cs-item {
-    background-color: var(--medium);
-  }
-  body.dark-mode #hero-1060 .cs-h3,
-  body.dark-mode #hero-1060 .cs-item-text {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #hero-1060 .cs-text {
-    opacity: .8;
-  }
-}
+
                                 
 /*-- -------------------------- -->
 <---       Side By Side         -->
@@ -498,29 +486,7 @@
     flex: none;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #RPsbs-1163 .cs-title,
-  body.dark-mode #RPsbsr-1163 .cs-title,
-  body.dark-mode #RPsbs-1163 .cs-text,
-  body.dark-mode #RPsbsr-1163 .cs-text,
-  body.dark-mode #RPsbs-1163 .cs-h3,
-  body.dark-mode #RPsbsr-1163 .cs-h3,
-  body.dark-mode #RPsbs-1163 .cs-li,
-  body.dark-mode #RPsbsr-1163 .cs-li {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #RPsbs-1163 .cs-text,
-  body.dark-mode #RPsbsr-1163 .cs-text,
-  body.dark-mode #RPsbs-1163 .cs-li,
-  body.dark-mode #RPsbsr-1163 .cs-li {
-    opacity: .8;
-  }
-  body.dark-mode #RPsbs-1163 .cs-graphic,
-  body.dark-mode #RPsbsr-1163 .cs-graphic {
-    opacity: .1;
-  }
-}
+
 
 /*-- -------------------------- -->
 <---    Side By Side Reverse    -->
@@ -564,12 +530,7 @@
     order: 2;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #RPsbsr-1163 {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-}
+
                                 
 /*-- -------------------------- -->
 <---           Steps            -->
@@ -721,23 +682,7 @@
     display: block;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #steps-1209 .cs-title,
-  body.dark-mode #steps-1209 .cs-text,
-  body.dark-mode #steps-1209 .cs-item-text,
-  body.dark-mode #steps-1209 .cs-h3 {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #steps-1209 .cs-number {
-    color: var(--primaryLight);
-    background-color: var(--medium);
-  }
-  body.dark-mode #steps-1209 .cs-text,
-  body.dark-mode #steps-1209 .cs-item-text {
-    opacity: 0.8;
-  }
-}
+
                                 
 /*-- -------------------------- -->
 <---    Final Call To Action    -->
@@ -851,12 +796,7 @@
     z-index: 1;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #cta:after {
-    display: none;
-  }
-}
+
 /*-- -------------------------- -->
 <---          Reviews           -->
 <--- -------------------------- -*/
