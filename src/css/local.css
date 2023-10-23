@@ -22,6 +22,104 @@
     left: 0;
     z-index: -2;
   }
+  #hero-1060 .cs-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#hero-1060 .cs-button-transparent {
+  text-decoration: none;
+  width: auto;
+  /* 46px - 56px */
+  height: clamp(2.875rem, 5.5vw, 3.5rem);
+  margin: 0;
+  padding: 0;
+  color: var(--primaryLight);
+  background-color: transparent;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+#hero-1060 .cs-button-transparent:before {
+  /* white hover box */
+  content: "";
+  /* 46px - 56px */
+  width: clamp(2.875em, 5.5vw, 3.5em);
+  background: black;
+  border-radius: 2.5rem;
+  opacity: 1;
+  position: absolute;
+  display: block;
+  top: -2px;
+  bottom: -2px;
+  left: -9px;
+  z-index: -1;
+  transition:
+      width 0.3s,
+      box-shadow 0.3s;
+}
+#hero-1060 .cs-button-transparent:hover:before {
+  width: 107%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+#hero-1060 .cs-tag {
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  margin: 0;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+}
+#hero-1060 .cs-number {
+  /* 16px - 20px */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.2em;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 0.25rem;
+  color: white;
+}
+#hero-1060 .cs-picture {
+  /* 46px - 56px */
+  width: clamp(2.875rem, 5.5vw, 3.5rem);
+  height: clamp(2.875rem, 5.5vw, 3.5rem);
+  margin-right: 1rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hero-1060 .cs-img {
+  width: 1.5rem;
+  height: auto;
+}
+#hero-1060 .cs-image-group {
+  font-size: min(1.6vw, 0.7em);
+  /* using ems so we can scale this container with a font size */
+  width: 51.9375em;
+  height: 42.125em;
+  position: relative;
+}
+#hero-1060 .cs-splash {
+  position: absolute;
+  width: 49.4375em;
+  height: 38.5em;
+  top: 1.25em;
+  right: -2.5em;
+}
+#hero-1060 .cs-contact-btns{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cs-contact-btns .cs-button-solid{
+  margin-bottom: 2em;
+}
   #hero-1060 .cs-background:before {
     /* Overlay */
     content: '';
@@ -96,7 +194,6 @@
     line-height: clamp(2.875rem, 5.5vw, 3.5rem);
     text-decoration: none;
     font-weight: 700;
-    margin: 0;
     color: #fff;
     padding: 0 1.5rem;
     background-color: var(--primary);
@@ -207,6 +304,15 @@
     background: linear-gradient(to right, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.94) 2%, rgba(0, 0, 0, 0) 100%);
     opacity: 1;
   }
+  #hero-1060 .cs-contact-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cs-contact-btns .cs-button-solid{
+    margin-bottom: 0;
+    margin-right: 2em;
+  }
 }
 /* Large Desktop Parallax Effect - 100px */
 @media only screen and (min-width: 100rem) {
@@ -220,6 +326,15 @@
   }
   #hero-1060 .cs-background img {
     display: none;
+  }
+  #hero-1060 .cs-contact-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cs-contact-btns .cs-button-solid{
+    margin-bottom: 0;
+    margin-right: 2em;
   }
 }
 
