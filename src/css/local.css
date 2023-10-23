@@ -301,6 +301,7 @@
   }
   #hero-1060 .cs-background {
     height: 87%;
+    filter: brightness(0.6);
   }
   #hero-1060 .cs-background:before {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.94) 2%, rgba(0, 0, 0, 0) 100%);
