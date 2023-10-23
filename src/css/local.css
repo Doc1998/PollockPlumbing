@@ -134,6 +134,7 @@
     z-index: 1;
     /* prevents the cursor from interacting with it */
     pointer-events: none;
+
   }
   #hero-1060 .cs-background img {
     position: absolute;
@@ -144,6 +145,7 @@
     object-fit: cover;
     /* makes the top of the image start at the top of the parent */
     object-position: top;
+    filter: brightness(0.75);
   }
   #hero-1060 .cs-container {
     width: 100%;
