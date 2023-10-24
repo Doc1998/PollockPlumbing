@@ -1,12 +1,4 @@
 {
   "name": "Pollock Plumbing",
-  "email": "info@pollockplumbing.ie",
-  "phone": "555-779-4407",
-  "phoneFormatted": "(555) 779-4407",
-  "address": {
-    "lineOne": "First Address Line",
-    "lineTwo": "Second Address Line, If Needed",
-    "mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
-  },
   "domain": "www.pollockplumbing.ie"
 }
